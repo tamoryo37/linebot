@@ -1,12 +1,14 @@
 'use strict';
 
+require('dotenv').config();
+
 const express = require('express');
 const line = require('@line/bot-sdk');
 const PORT = process.env.PORT || 3000;
 
 const config = {
-    channelSecret: '0e44da5f57183580bd89fb55b1a19eb0',
-    channelAccessToken: 'znB0vfH5JGh4NqPTT1h4b363k5zPFaP+oF06dFN3U5hFZvTM93wmxiCfdZQBXH3GzrQvN2EGPiz+jT9XgkaFkBTpaq3bdYGj7H4A8R+AYp1BGwdwON6gEHRuarD9VIR/R3bNbEzOGCIrf4OadyD7PgdB04t89/1O/w1cDnyilFU='
+    channelSecret: process.env.LINE_CHANNEL_ACCESS_TOKEN,
+    channelAccessToken: process.env.LINE_CHANNEL_SECRET
 };
 
 const app = express();
